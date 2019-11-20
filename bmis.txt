@@ -1,0 +1,3 @@
+Height: 190.0; weight: 95.0; BMI: 26.32
+Height: 190.0; weight: 90.0; BMI: 24.93
+Height: 190.0; weight: 88.0; BMI: 24.38

@@ -1,0 +1,12 @@
+
+<h2>Here you can calculate your BMI (Body Mass Index)</h2>
+
+<p class="error_message"><%= @input_error %></p>
+
+<form action="/" method="post">
+  <p>Your height in centimeters</p>
+  <input type="text" name="height" placeholder="height in cm" value="<%= @height %>"><br>
+  <p>Your weight in kilograms</p>
+  <input type="text" name="weight" placeholder="weight" value="<%= @weight %>"><br><br>
+  <input type="submit" value="Calculate">
+</form>
