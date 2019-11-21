@@ -26,6 +26,16 @@ get '/tdee' do
   erb :tdee
 end
 
+post '/tdee' do
+  @gender = params[:gender]
+  @height = params[:height]
+  @weight = params[:weight]
+  @age = params[:age]
+  @activity = params[:activity]
+
+  erb :tdee
+end
+
 get '/about' do
   under_construction
   erb :message
