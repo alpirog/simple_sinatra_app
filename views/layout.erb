@@ -11,11 +11,25 @@
 
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a> |
-      <a href="/tdee">TDEE Calc</a> |
-      <a href="/about">About</a> |
-      <a href="/show_bmi">BMIs</a>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">Home</a>
+          <a class="navbar-item" href="/tdee">TDEE Calc</a>
+          <a class="navbar-item" href="/about">About</a>
+          <a class="navbar-item" href="/show_bmi">BMIs</a>
+        </div>
+        
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary"><strong>Sign up</strong></a>
+              <a class="button is-light">Log in</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <%= yield %>

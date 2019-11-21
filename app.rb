@@ -23,8 +23,7 @@ post '/' do
 end
 
 get '/tdee' do
-  under_construction
-  erb :message
+  erb :tdee
 end
 
 get '/about' do
