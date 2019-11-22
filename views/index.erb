@@ -1,12 +1,28 @@
-
-<h2>Here you can calculate your BMI (Body Mass Index)</h2>
-
 <p class="error_message"><%= @input_error %></p>
 
-<form action="/" method="post">
-  <p>Your height in centimeters</p>
-  <input type="text" name="height" placeholder="height in cm" value="<%= @height %>"><br>
-  <p>Your weight in kilograms</p>
-  <input type="text" name="weight" placeholder="weight" value="<%= @weight %>"><br><br>
-  <input type="submit" value="Calculate">
-</form>
+<div class="column is-half is-offset-one-quarter">
+  <div class="content">
+    <h2>Here you can calculate your BMI (Body Mass Index)</h2>
+  </div>
+    <section class="section">
+    <div class="container">
+      <form action="/" method="post">
+        <div class="field">
+          <label class="label">Your height in cm</label>
+          <div class="control">
+            <input class="input" type="text" name="height" placeholder="Centimeters" value="<%= @height %>">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Your weight in kg</label>
+          <div class="control">
+            <input class="input" type="text" name="weight" placeholder="Kilograms" value="<%= @weight %>">
+          </div>
+        </div>
+        <div class="vert_padded">
+            <input class="button is-primary" type="submit" value="Calculate">
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
