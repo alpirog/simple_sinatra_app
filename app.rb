@@ -48,7 +48,7 @@ post '/tdee' do
   @bmr = (@height * 6.25) + (@weight * 10) - (@age * 5) + @gender_select[@gender]
   @tdee = (@bmr * @activity_select[@activity]).round
 
-  erb :tdee
+  erb :show_tdee
 end
 
 get '/about' do
