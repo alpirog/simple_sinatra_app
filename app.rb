@@ -26,12 +26,27 @@ get '/tdee' do
   erb :tdee
 end
 
+# require './tdee'
+
 post '/tdee' do
   @gender = params[:gender]
-  @height = params[:height]
-  @weight = params[:weight]
-  @age = params[:age]
+  @height = params[:height].to_i
+  @weight = params[:weight].to_i
+  @age = params[:age].to_i
   @activity = params[:activity]
+
+  @activity_select = {
+    "sedentary" => 1.2,
+    "light" => 1.375,
+    "moderate" => 1.55,
+    "active" => 1.725,
+    "extreme" => 1.9
+  }
+
+  @gender_select = { '1' => 5, '2' => -161 }
+
+  @bmr = (@height * 6.25) + (@weight * 10) - (@age * 5) + @gender_select[@gender]
+  @tdee = (@bmr * @activity_select[@activity]).round
 
   erb :tdee
 end
