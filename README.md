@@ -1,7 +1,7 @@
 # Simple Sinatra App
 
 This app is written with Ruby programming language using Sinatra framework.
-It serves only for my own educational purposes and is far from a complete application.
+It serves only for my own purposes and is far from a complete application.
 
 However, you can calculate your Body Mass Index (BMI) and Daily Calories Expenditure, also known as TDEE.
 So it may be handy if somehow you didn't find something similar yet.
