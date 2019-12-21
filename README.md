@@ -18,14 +18,14 @@ Feel free to do whatever you want with this.
 ## Instructions
 
 Clone the repository to your local folder.
-Run the following command from there:
+Run the following:
 
 ```
-ruby app.rb
+bundle install
+rackup
 ```
-
-Go to
+or
 ```
-//localhost:4567
+bundle exec rackup
 ```
-in your web browser.
+Go to //localhost:9292 in your web browser or other port if its specified after ```rackup``` command.

@@ -1,5 +1,6 @@
-require 'sinatra'
-require 'sinatra/reloader'
+# require 'rubygems'
+# require 'sinatra'
+# require 'sinatra/reloader'
 
 get '/' do
   erb :index
@@ -25,8 +26,6 @@ end
 get '/tdee' do
   erb :tdee
 end
-
-# require './tdee'
 
 post '/tdee' do
   @gender = params[:gender]
