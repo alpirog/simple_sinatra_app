@@ -1,7 +1,3 @@
-# require 'rubygems'
-# require 'sinatra'
-# require 'sinatra/reloader'
-
 get '/' do
   erb :index
 end
@@ -33,6 +29,13 @@ post '/tdee' do
   @weight = params[:weight].to_i
   @age = params[:age].to_i
   @activity = params[:activity]
+
+  params.each do |key, value|
+    if params[key] == ""
+      @input_error = "Field can't be empty! Try again."
+      return erb :tdee
+    end
+  end
 
   @activity_select = {
     "sedentary" => 1.2,
