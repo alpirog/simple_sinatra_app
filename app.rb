@@ -20,6 +20,7 @@ post '/' do
 end
 
 get '/tdee' do
+
   erb :tdee
 end
 
@@ -31,6 +32,7 @@ post '/tdee' do
   @activity = params[:activity]
 
   @checked = "checked" # For radio element validation (see tdee.erb)
+  @selected = "selected"
 
   # Check if gender is selected
   # If gender is not selected, then params hash won't include the "gender" key
