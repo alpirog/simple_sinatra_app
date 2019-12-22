@@ -6,9 +6,9 @@
         <div class="control">
           <label class="label">Gender</label>
           <label class="radio">
-            <input type="radio" name="gender" value="male" <%= @checked if params[:gender] == "male" %>>Male</label>
+            <input type="radio" name="gender" value="male" <%= 'checked' if params[:gender] == "male" %>>Male</label>
           <label class="radio">
-            <input type="radio" name="gender" value="female" <%= @checked if params[:gender] == "female" %>>Female</label>
+            <input type="radio" name="gender" value="female" <%= 'checked' if params[:gender] == "female" %>>Female</label>
         </div>
 
         <div class="field vert_padded">
@@ -33,11 +33,11 @@
         <label class="label">Select Your Activity Level</label>
         <div class="select">
           <select name="activity">
-            <option value="sedentary" <%= @selected if params[:activity] == "sedentary" %>>Sedentary (little or no exercise)</option>
-            <option value="light" <%= @selected if params[:activity] == "light" %>>Lightly (light exercise 1-3 days/week)</option>
-            <option value="moderate" <%= @selected if params[:activity] == "moderate" %>>Moderately (moderate exercise/sports 3-5 days/week)</option>
-            <option value="active" <%= @selected if params[:activity] == "active" %>>Very active (hard exercise/sports 6-7 days/week)</option>
-            <option value="extreme" <%= @selected if params[:activity] == "extreme" %>>Extremely active (training twice a day)</option>
+            <option value="sedentary" <%= 'selected' if params[:activity] == "sedentary" %>>Sedentary (little or no exercise)</option>
+            <option value="light" <%= 'selected' if params[:activity] == "light" %>>Lightly (light exercise 1-3 days/week)</option>
+            <option value="moderate" <%= 'selected' if params[:activity] == "moderate" %>>Moderately (moderate exercise/sports 3-5 days/week)</option>
+            <option value="active" <%= 'selected' if params[:activity] == "active" %>>Very active (hard exercise/sports 6-7 days/week)</option>
+            <option value="extreme" <%= 'selected' if params[:activity] == "extreme" %>>Extremely active (training twice a day)</option>
           </select>
         </div>
         <div class="vert_padded">
