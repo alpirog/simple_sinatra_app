@@ -3,13 +3,13 @@ get '/' do
 end
 
 post '/' do
-  @height = params[:height].to_f
-  @weight = params[:weight].to_f
+  @height = params[:height]
+  @weight = params[:weight]
   if params[:height] == '' || params[:weight] == ''
     @input_error = "Field can't be empty! Try again."
     erb :index
   else
-    @bmi = (@weight / ((@height / 100) ** 2)).round(2)
+    @bmi = (@weight.to_f / ((@height.to_f / 100) ** 2)).round(2)
 
     f = File.open('bmis.txt', 'a')
     f.write "Height: #{@height}; weight: #{@weight}; BMI: #{@bmi}\n"
@@ -25,10 +25,20 @@ end
 
 post '/tdee' do
   @gender = params[:gender]
-  @height = params[:height].to_i
-  @weight = params[:weight].to_i
-  @age = params[:age].to_i
+  @height = params[:height]
+  @weight = params[:weight]
+  @age = params[:age]
   @activity = params[:activity]
+
+  @checked = "checked" # For radio element validation (see tdee.erb)
+
+  # Check if gender is selected
+  # If gender is not selected, then params hash won't include the "gender" key
+  # so the validation will be missed and an error occur
+  if params.has_key?("gender") == false
+    @input_error = "Select gender"
+    return erb :tdee
+  end
 
   params.each do |key, value|
     if params[key] == ""
@@ -47,7 +57,7 @@ post '/tdee' do
 
   @gender_select = { '1' => 5, '2' => -161 }
 
-  @bmr = (@height * 6.25) + (@weight * 10) - (@age * 5) + @gender_select[@gender]
+  @bmr = (@height.to_i * 6.25) + (@weight.to_i * 10) - (@age.to_i * 5) + @gender_select[@gender]
   @tdee = (@bmr * @activity_select[@activity]).round
 
   erb :show_tdee
