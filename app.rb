@@ -55,7 +55,7 @@ post '/tdee' do
     "extreme" => 1.9
   }
 
-  @gender_select = { '1' => 5, '2' => -161 }
+  @gender_select = { 'male' => 5, 'female' => -161 }
 
   @bmr = (@height.to_i * 6.25) + (@weight.to_i * 10) - (@age.to_i * 5) + @gender_select[@gender]
   @tdee = (@bmr * @activity_select[@activity]).round
